@@ -8,13 +8,13 @@
 
 <?php
 
-$geolocationOfAnimals = array (
+$Animals = array (
     "Eurasia" => array(
-        "Himalayan" => "Bear",
-        "Red" => "Wolf"
+        "Himalayan Bear",
+        "American buffalo"
     ),
     "Africa" => array(
-        "Elephan" => "African",
+        "Elephan African",
         "giraffe"
     ),
     "North America" => array(
@@ -26,7 +26,7 @@ $geolocationOfAnimals = array (
         "Jaguar"
     ),
     "Australia" => array(
-        "Tasmanian" => "Devil",
+        "Tasmanian Devil",
         "Kangaroo"
     ),
     "Antarctica" => array(
@@ -35,8 +35,57 @@ $geolocationOfAnimals = array (
     )
 );
 
+foreach ($Animals as $key=>$element){
 
-foreach ($geolocationOfAnimals as $key => $element)
+    $array1 = $Animals["Eurasia"];
+    $array2 = $Animals["Africa"];
+    $array3 = $Animals["Australia"];
+    $result = array_merge($array1,$array2,$array3);
+    unset($result[3]);
+    unset($result[5]);
+
+    $res1 = explode(' ', $result[0]);
+    $res2 = explode(' ', $result[1]);
+    $res3 = explode(' ', $result[2]);
+    $res4 = explode(' ', $result[4]);
+    $arr = array(
+        $res1,
+        $res2,
+        $res3,
+        $res4
+    );
+    unset($arr[0][0]);
+    unset($arr[1][0]);
+    unset($arr[2][0]);
+    unset($arr[3][0]);
+    shuffle($arr);
+
+    $arr2 = array(
+        $res1,
+        $res2,
+        $res3,
+        $res4
+    );
+    unset($arr2[0][1]);
+    unset($arr2[1][1]);
+    unset($arr2[2][1]);
+    unset($arr2[3][1]);
+
+    $results = $arr.' '.$arr2;
+    foreach ($arr2 as $item){
+        foreach ($item as $value){
+            echo $value.'<br>';
+        }
+    }
+    foreach ($arr as $item){
+        foreach ($item as $value){
+            echo $value.'<br>';
+        }
+    }
+    break;
+}
+
+/*foreach ($geolocationOfAnimals as $key => $element)
 {
     foreach ($element as $key => $element)
     {
@@ -48,6 +97,7 @@ foreach ($geolocationOfAnimals as $key => $element)
         }
     }
 }
+
 
 
 $array = $assoc;
@@ -69,7 +119,7 @@ function array_quake(&$array) {
 array_quake($array);
 foreach ($array as $key => $value){
     echo "$key $value <br>";
-}
+}*/
 
 ?>
 
