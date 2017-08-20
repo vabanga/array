@@ -44,58 +44,23 @@ foreach ($Animals as $key=>$element){
     unset($result[3]);
     unset($result[5]);
 
-    $res1 = explode(' ', $result[0]);
-    $res2 = explode(' ', $result[1]);
-    $res3 = explode(' ', $result[2]);
-    $res4 = explode(' ', $result[4]);
-    $arr = array(
-        $res1,
-        $res2,
-        $res3,
-        $res4
-    );
-    unset($arr[0][0]);
-    unset($arr[1][0]);
-    unset($arr[2][0]);
-    unset($arr[3][0]);
-    shuffle($arr);
+    $res = explode(" ",$result[0]);
+    $res1 = explode(" ",$result[1]);
+    $res2 = explode(" ",$result[2]);
+    $res3 = explode(" ",$result[4]);
 
-    $arr2 = array(
-        $res1,
-        $res2,
-        $res3,
-        $res4
-    );
-    unset($arr2[0][1]);
-    unset($arr2[1][1]);
-    unset($arr2[2][1]);
-    unset($arr2[3][1]);
-
-    $results = $arr.' '.$arr2;
-    foreach ($arr2 as $item){
-        foreach ($item as $value){
-            echo $value.'<br>';
-        }
-    }
-    foreach ($arr as $item){
-        foreach ($item as $value){
-            echo $value.'<br>';
-        }
-    }
+    $r1 = array_merge($res,$res1,$res2,$res3);
+    unset($r1[1]);
+    unset($r1[3]);
+    unset($r1[5]);
+    unset($r1[7]);
+    $r2 = array_merge($res,$res1,$res2,$res3);
+    unset($r2[0]);
+    unset($r2[2]);
+    unset($r2[4]);
+    unset($r2[6]);
+    $assoc = array_combine($r1,$r2);
     break;
-}
-
-/*foreach ($geolocationOfAnimals as $key => $element)
-{
-    foreach ($element as $key => $element)
-    {
-        if (!is_numeric($key)) {
-            $assoc["Himalayan"] = "Bear";
-            $assoc["Red"] = "Wolf";
-            $assoc["Elephan"] = "African";
-            $assoc["Tasmanian"] = "Devil";
-        }
-    }
 }
 
 
@@ -119,7 +84,7 @@ function array_quake(&$array) {
 array_quake($array);
 foreach ($array as $key => $value){
     echo "$key $value <br>";
-}*/
+}
 
 ?>
 
