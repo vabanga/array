@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Домашнее задание 03</title>
-</head>
-<body>
 
 <?php
 
@@ -46,11 +39,11 @@ foreach ($Animals as $k1 => $v1) {
 	}
 }
 
-$arr3 = $arr1;
 
-$arr4 = $arr2;
-shuffle($arr4);
-$result = array_combine($arr3,$arr4);
+$arr1;
+$arr2;
+shuffle($arr2);
+$result = array_combine($arr1,$arr2);
 
 
 
@@ -60,9 +53,3 @@ foreach ($result as $k1=>$v1){
 
 ?>
 
-<form action="Array.php" method="POST">
-	<input name="myActionName" type="submit" value="Выполнить" />
-</form>
-
-</body>
-</html>
