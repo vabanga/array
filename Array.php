@@ -46,31 +46,17 @@ foreach ($Animals as $k1 => $v1) {
 	}
 }
 
+$arr3 = $arr1;
 
-$result = array_combine($arr1,$arr2);
+$arr4 = $arr2;
+shuffle($arr4);
+$result = array_combine($arr3,$arr4);
 
 
 
-$array = $result;
-
-function array_quake(&$array) {
-	if (is_array($array)) {
-		$keys = array_keys($array);
-		$temp = $array;
-		$array = NULL;
-		shuffle($temp); // Array shuffle
-		foreach ($temp as $k => $item) {
-			$array[$keys[$k]] = $item;
-		}
-		return;
-	}
-	return false;
-}
-
-array_quake($array);
-foreach ($array as $key => $value){
-	echo "$key $value <br>";
-}
+foreach ($result as $k1=>$v1){
+	echo $k1.' '.$v1.'<br>';
+};
 
 ?>
 
