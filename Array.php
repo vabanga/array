@@ -42,10 +42,12 @@ foreach ($Animals as $k1 => $v1) {
 global $arr1;
 global $arr2;
 shuffle($arr2);
-$result = array_combine($arr1,$arr2);
-foreach ($result as $k1=>$v1){
-	echo $k1.' '.$v1.'<br>';
-};
+if(count($arr1)!=count($arr2)){
+	die("Массивы не одинаковых размеров");
+}
+for($i = 0; $i<count($arr1); $i++){
+	echo $arr1[$i].' '.$arr2[$i].'<br>';
+}
 
 ?>
 
