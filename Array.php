@@ -39,14 +39,10 @@ foreach ($Animals as $k1 => $v1) {
 	}
 }
 
-
-$arr1;
-$arr2;
+global $arr1;
+global $arr2;
 shuffle($arr2);
 $result = array_combine($arr1,$arr2);
-
-
-
 foreach ($result as $k1=>$v1){
 	echo $k1.' '.$v1.'<br>';
 };
