@@ -39,14 +39,16 @@ foreach ($Animals as $k1 => $v1) {
 	}
 }
 
-global $arr1;
-global $arr2;
-shuffle($arr2);
-if(count($arr1)!=count($arr2)){
+$a = [];
+$a = $arr1;
+$b = [];
+$b = $arr2;
+shuffle($b);
+if(count($a)!=count($b)){
 	die("Массивы не одинаковых размеров");
 }
 for($i = 0; $i<count($arr1); $i++){
-	echo $arr1[$i].' '.$arr2[$i].'<br>';
+	echo $a[$i].' '.$b[$i].'<br>';
 }
 
 ?>
